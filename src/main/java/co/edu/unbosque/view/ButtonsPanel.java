@@ -9,13 +9,14 @@ public class ButtonsPanel extends JPanel {
 
     private JButton[] buttons;
 
-    public ButtonsPanel(String[] buttonLabels) {
+    public ButtonsPanel() {
         setLayout(new FlowLayout());
         setVisible(true);
-        init(buttonLabels);
+        init();
     }
 
-    public void init(String[] buttonLabels) {
+    public void init() {
+        String[] buttonLabels = new String[]{"Calcular Fuerza Eléctrica", "Calcular Campo Eléctrico"};
         buttons = new JButton[buttonLabels.length];
         for (int i = 0; i < buttons.length; i++) {
             var buttonText = buttonLabels[i];

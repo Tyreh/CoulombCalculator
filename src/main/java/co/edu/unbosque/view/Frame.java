@@ -5,9 +5,8 @@ import java.awt.*;
 
 public class Frame extends JFrame {
 
-    private final ButtonsPanel buttonsPanel = new ButtonsPanel(new String[]{"Calcular Fuerza Eléctrica", "Calcular Campo Magnético", "Ver Historial"});
+    private final ButtonsPanel buttonsPanel = new ButtonsPanel();
     private final CoulombPanel coulombPanel = new CoulombPanel();
-    private final HistoryPanel historyPanel = new HistoryPanel();
 
     public Frame() {
         setTitle("Calculadora de Coulomb");
@@ -21,16 +20,12 @@ public class Frame extends JFrame {
     }
 
     public void init() {
-        getCoulombPanel().add(buttonsPanel, BorderLayout.PAGE_END);
+        getContentPane().add(buttonsPanel, BorderLayout.PAGE_END);
         getContentPane().add(coulombPanel, BorderLayout.CENTER);
     }
 
     public CoulombPanel getCoulombPanel() {
         return coulombPanel;
-    }
-
-    public HistoryPanel getHistoryPanel() {
-        return historyPanel;
     }
 
     public ButtonsPanel getButtonsPanel() {
